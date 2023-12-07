@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>창업 아이디어 생성기</title>
+    
+    <!-- 스타일 섹션 -->
+    <style>
+          .body-moving-background {
+            background: linear-gradient(270deg, #ffd9e8, #ffecd2, #c1f0dc, #cfd9ff);
+            background-size: 800% 800%;
+            animation: moveBackground 15s ease infinite;
+            height: 100vh;
+            width: 100%;
+        }
+        @keyframes moveBackground {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        body, h1, textarea, button {
+            font-family: 'Lora', serif;
+        }
+
+
+        h1 {
+            font-weight: 700;
+            font-size: 2.0em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+    height: 300px; /* 적절한 높이 설정 */
+    font-weight: 300; /* 적절한 글꼴 굵기 */
+    font-size: 1.2em;
+}
+
+        button {
+            font-weight: 400;
+            font-size: 1.2em;
+        }
+    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="body-moving-background">
+    <div class="container">
+        <h1>창업 아이디어 생성기</h1>
+        <form action="/generate-idea" method="post">
+            <label for="keywords">키워드 입력:</label>
+            <input type="text" id="keywords" name="keywords" required>
+            <input type="submit" value="아이디어 생성">
+        </form>
+
+        {% if idea %}
+            <h2>생성된 아이디어:</h2>
+            <p>{{ idea }}</p>
+        {% endif %}
+
+        <div class="row justify-content-center mt-4">
+            <div class="col text-center">
+                <a href="/" class="btn btn-info m-2">창업 계획 피드백</a>
+                <a href="/solve-problem" class="btn btn-info m-2">비즈니스 문제 해결</a>
+                <a href="/create-marketing-content" class="btn btn-info m-2">마케팅 콘텐츠 생성</a>
+                <a href="/market-analysis" class="btn btn-info m-2">시장 분석</a>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col text-center">
+            <iframe width="600" height="415" src="https://www.youtube.com/embed/S3RQlOqEiLo?si=9UAxfFZ_do1ld_LN" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</html>
